@@ -1,11 +1,7 @@
----
-
 ### **Medico – Healthcare E-commerce Platform (May 2025)**
 
 **Overview**:
 Medico is an integrated healthcare platform that combines e-commerce functionality with AI-driven diagnostic tools to improve healthcare accessibility and efficiency.
-
----
 
 ### 🔹 **Key Features**:
 
@@ -25,5 +21,3 @@ Medico is an integrated healthcare platform that combines e-commerce functionali
 4. **Accessible Diagnostics**
 
    * Provided a user-friendly interface to access AI tools for **preliminary health diagnostics**.
-
----
