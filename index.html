@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR API</title>
+    
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <a class="logo" style="font-weight:bold;font-size:500%;color:red;">MediGo </span></a>
+    <nav class="navbar">
+        <a href="http://localhost/grocerystore/grocery%20store/home.php">Home</a>
+        <a href="http://localhost/grocerystore/grocery%20store/shop.php">Medicines & Supplements</a>
+      
+        <a href="http://localhost/grocerystore/grocery%20store/orders.php">Orders</a>
+        <a href="http://localhost/grocerystore/grocery%20store/about.php">About us</a>
+     
+        <a href="http://localhost/grocerystore/grocery%20store/contact.php">Contact</a>
+        <a href="http://127.0.0.1:5000/">OCR</a>
+     </nav>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+        }
+        .navbar .logo {
+            font-weight: bold;
+            font-size: 2em;
+            color: red;
+            text-decoration: none;
+        }
+        .navbar a {
+            margin: 0 10px;
+            color: gray;
+            text-decoration: none;
+            font-size: 1em;
+        }
+        .navbar a:hover {
+            color: black;
+        }
+        .navbar-icons {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-icons i, .navbar-icons span {
+            margin: 0 10px;
+            font-size: 1.2em;
+            color: gray;
+            cursor: pointer;
+        }
+        .navbar-icons span {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-icons span small {
+            margin-left: 5px;
+            font-size: 0.8em;
+        }
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 50px auto;
+            max-width: 600px;
+            border: 5px solid #008000; /* Green border */
+        }
+
+        h1 {
+            color: #ff0000; /* Red text */
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #008000; /* Green label text */
+        }
+
+    
+        .btn-primary {
+            background-color: #ff0000; /* Red button background */
+            border-color: #ff0000; /* Red border */
+        }
+
+        .btn-primary:hover {
+            background-color: #800000; /* Darker red on hover */
+            border-color: #800000;
+        }
+
+        #result {
+            background: #e0ffe0; /* Light green background */
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            border: 2px solid #008000; /* Green border */
+        }
+
+        body {
+            background-color: #ffffff; /* White background */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">OCR Image Upload</h1>
+        <form id="upload-form" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="image">Choose an image:</label>
+                <input type="file" class="form-control" id="image" name="image" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Upload and Process</button>
+        </form>
+        <div id="result" class="mt-4"></div>
+    </div>
+
+  
+    <!-- <script>
+        document.getElementById('upload-form').onsubmit = async function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const response = await fetch('/ocr', {
+                method: 'POST',
+                body: formData
+            });
+            const result = await response.json();
+    
+            // Display only the words (assuming result.text is an array)
+            const words = result.text || [];
+            const formatted = words.join('<br>'); // separate each word by a line break
+            document.getElementById('result').innerHTML = formatted;
+        };
+    </script>
+     -->
+     <script>
+        document.getElementById('upload-form').onsubmit = async function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const response = await fetch('/ocr', {
+                method: 'POST',
+                body: formData
+            });
+    
+            const result = await response.json();
+            const medicines = result.text || [];
+    
+            let formatted = "";
+            medicines.forEach((medicine, index) => {
+                formatted += `<div><strong>Med${index + 1}.</strong> ${medicine}</div>`;
+            });
+    
+            document.getElementById('result').innerHTML = formatted;
+        };
+    </script>
+    
+</body>
+</html>
