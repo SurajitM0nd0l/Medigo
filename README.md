@@ -1,8 +1,31 @@
-Medico
-Developed Medico, a healthcare e-commerce pla1orm oﬀering medicines, medical equipment, and essen9al supplies. Integrated
-prescrip9on scanning and pneumonia detec9on using AI, ensuring smart and accessible healthcare solu9ons.
-● Built Medico Platform: Developed using HTML, CSS, JavaScript, PHP, and SQL for frontend and backend functionality.
-● Smart Prescription Reader: Integrated OCR-based prescription scanning using Python and EasyOCR.
-● AI-powered Diagnosis: Implemented chest X-ray pneumonia detection using a VGG16-based deep learning model.
-● Healthcare Accessibility: Enabled users to order verified medical products and access AI tools for preliminary diagnostics.
-explain this project in brief with the main points
+Here’s a brief explanation of the **Medico** project with the main points:
+
+---
+
+### **Medico – Healthcare E-commerce Platform (May 2025)**
+
+**Overview**:
+Medico is an integrated healthcare platform that combines e-commerce functionality with AI-driven diagnostic tools to improve healthcare accessibility and efficiency.
+
+---
+
+### 🔹 **Key Features**:
+
+1. **E-commerce for Healthcare**
+
+   * Users can purchase medicines, medical equipment, and essential supplies.
+   * Developed full-stack functionality using **HTML, CSS, JavaScript (frontend)** and **PHP, SQL (backend)**.
+
+2. **Smart Prescription Scanning**
+
+   * Integrated **OCR** using **EasyOCR** in Python to extract data from medical prescriptions.
+
+3. **AI-powered Pneumonia Detection**
+
+   * Used **VGG16 deep learning model** to analyze chest X-rays and detect pneumonia.
+
+4. **Accessible Diagnostics**
+
+   * Provided a user-friendly interface to access AI tools for **preliminary health diagnostics**.
+
+---
