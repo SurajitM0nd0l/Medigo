@@ -1,5 +1,3 @@
-Here’s a brief explanation of the **Medico** project with the main points:
-
 ---
 
 ### **Medico – Healthcare E-commerce Platform (May 2025)**
